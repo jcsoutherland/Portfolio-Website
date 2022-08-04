@@ -1,8 +1,7 @@
-const Projects = () => {
+const Projects = (props) => {
   return (
     <section
-      id='projects'
-      className='h-screen bg-white flex items-center justify-between px-16'
+      className={`h-screen bg-gray-100 flex items-center justify-between px-16 ${props.className}`}
     >
       Projects
     </section>

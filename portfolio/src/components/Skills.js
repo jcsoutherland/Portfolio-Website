@@ -1,8 +1,7 @@
-const Skills = () => {
+const Skills = (props) => {
   return (
     <section
-      id='skills'
-      className='h-screen bg-white flex items-center justify-between px-16'
+      className={`h-screen bg-gray-200 flex items-center justify-between px-16 ${props.className}`}
     >
       Skills
     </section>

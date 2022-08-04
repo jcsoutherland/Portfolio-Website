@@ -1,8 +1,7 @@
-const Landing = () => {
+const Landing = (props) => {
   return (
     <section
-      id='home'
-      className='h-screen bg-white flex items-center justify-between px-16'
+      className={`h-screen bg-white flex items-center justify-between px-16 ${props.className}`}
     >
       <div className='font-bold text-5xl text-purple-700'>
         <h1>Joey Southerland</h1>

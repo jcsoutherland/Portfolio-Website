@@ -13,9 +13,9 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Joey Southerland Portfolio</title>
     <script>
-      /*window.onload(() => {
-        window.scrollTo(0, 0)
-      })*/
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual'
+      }
     </script>
   </head>
   <body>

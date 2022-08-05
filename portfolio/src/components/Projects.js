@@ -1,11 +1,7 @@
+import Card from './Card'
+
 const Projects = (props) => {
-  return (
-    <section
-      className={`h-screen bg-gray-100 flex items-center justify-between px-16 ${props.className}`}
-    >
-      Projects
-    </section>
-  )
+  return <Card className={props.className}>Projects</Card>
 }
 
 export default Projects

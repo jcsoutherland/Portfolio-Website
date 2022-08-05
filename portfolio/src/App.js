@@ -7,17 +7,21 @@ import Contact from './components/Contact'
 function App() {
   const scrollToHandler = (e) => {
     const element = document.querySelector(`.${e.target.id}`)
-    element.scrollIntoView(true)
+
+    const navOffset = 64
+    window.scroll({ top: element.offsetTop - navOffset, behavior: 'smooth' })
   }
 
   return (
-    <div className='flex flex-col'>
+    <>
       <Header onClick={scrollToHandler} />
-      <Landing className='home' />
-      <Projects className='projects' />
-      <Skills className='skills' />
-      <Contact className='contact' />
-    </div>
+      <div className='flex flex-col'>
+        <Landing className='Home' />
+        <Projects className='Projects' />
+        <Skills className='Skills' />
+        <Contact className='Contact' />
+      </div>
+    </>
   )
 }
 

@@ -4,6 +4,15 @@ const Header = (props) => {
   const listOptions = ['Home', 'Projects', 'Skills', 'Contact']
   const [visible, setVisible] = useState('Home')
 
+  const toggleTheme = () => {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark')
+    } else {
+      document.documentElement.classList.add('dark')
+    }
+    console.log(document.documentElement.classList)
+  }
+
   window.addEventListener('scroll', () => {
     let windowTop = document.documentElement.scrollTop
     const windowHeight = document.documentElement.clientHeight
@@ -35,7 +44,7 @@ const Header = (props) => {
           Portfolio
         </label>
       </div>
-      <ul className='flex gap-8 font-bold px-12'>
+      <ul className='flex gap-8 font-bold px-12 items-center'>
         {listOptions.map((label, index) => {
           return (
             <ListItem
@@ -48,8 +57,9 @@ const Header = (props) => {
         })}
         <img
           className='h-8 w-8 overflow-hidden'
-          src=''
+          src='light-mode.png'
           alt='color mode toggle'
+          onClick={toggleTheme}
         ></img>
       </ul>
     </nav>

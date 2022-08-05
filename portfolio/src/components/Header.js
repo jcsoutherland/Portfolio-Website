@@ -40,7 +40,7 @@ const Header = (props) => {
   })
 
   return (
-    <nav className='select-none bg-white flex w-screen h-16 justify-between items-center px-8 sticky top-0  drop-shadow-lg shadow-purple-700 m-0 dark:bg-gray-700'>
+    <nav className='select-none bg-white flex w-screen h-16 justify-between items-center px-8 sticky top-0  drop-shadow-lg  m-0 dark:bg-gray-700'>
       <div className='flex items-center gap-4'>
         <img
           className='pointer-events-none h-8 w-8'
@@ -48,7 +48,7 @@ const Header = (props) => {
           alt='Logo'
         />
         <label
-          className='font-bold text-3xl text-purple-700 cursor-pointer'
+          className='font-bold text-3xl text-purple-700 dark:text-purple-500 cursor-pointer'
           onClick={props.onClick}
           id='logo-btn'
         >
@@ -85,8 +85,8 @@ export const ListItem = ({ label, onClick, visible }) => {
       <button
         className={
           visible === label
-            ? 'transition-colors duration-300 text-purple-700'
-            : 'transition-colors duration-300 text-gray-400 hover:text-purple-400 active:text-purple-700'
+            ? 'transition-colors duration-300 text-purple-700 dark:text-purple-500'
+            : 'transition-colors duration-300 text-gray-400 hover:text-purple-400 active:text-purple-700 dark:hover:text-purple-300'
         }
         id={label}
         onClick={onClick}

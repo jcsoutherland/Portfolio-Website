@@ -27,7 +27,13 @@ const Header = (props) => {
           src='favicon.png'
           alt='Logo'
         />
-        <label className='font-bold text-3xl text-purple-700'>Portfolio</label>
+        <label
+          className='font-bold text-3xl text-purple-700 cursor-pointer'
+          onClick={props.onClick}
+          id='logo-btn'
+        >
+          Portfolio
+        </label>
       </div>
       <ul className='flex gap-8 font-bold px-12'>
         {listOptions.map((label, index) => {

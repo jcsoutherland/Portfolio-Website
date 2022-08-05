@@ -6,7 +6,10 @@ import Contact from './components/Contact'
 
 function App() {
   const scrollToHandler = (e) => {
-    const element = document.querySelector(`.${e.target.id}`)
+    let element = document.querySelector('.Home')
+    if (e.target.id !== 'logo-btn') {
+      element = document.querySelector(`.${e.target.id}`)
+    }
     const navOffset = 64
     let elementTop = element.offsetTop
     window.scroll({ top: elementTop - navOffset, behavior: 'smooth' })

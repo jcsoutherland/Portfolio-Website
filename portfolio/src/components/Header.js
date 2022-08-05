@@ -3,14 +3,25 @@ import { useState } from 'react'
 const Header = (props) => {
   const listOptions = ['Home', 'Projects', 'Skills', 'Contact']
   const [visible, setVisible] = useState('Home')
+  const [video, setVideo] = useState('light-dark-mode-standard.webm')
 
-  const toggleTheme = () => {
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark')
+  const switchVideo = () => {
+    if (video === 'light-dark-mode-standard.webm') {
+      setVideo('light-dark-mode-reverse.webm')
     } else {
-      document.documentElement.classList.add('dark')
+      setVideo('light-dark-mode-standard.webm')
     }
-    console.log(document.documentElement.classList)
+  }
+
+  const toggleTheme = (e) => {
+    if (e.target.paused) {
+      e.target.play()
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark')
+      } else {
+        document.documentElement.classList.add('dark')
+      }
+    }
   }
 
   window.addEventListener('scroll', () => {
@@ -29,7 +40,7 @@ const Header = (props) => {
   })
 
   return (
-    <nav className='select-none bg-white flex w-screen h-16 justify-between items-center px-8 sticky top-0  drop-shadow-lg shadow-purple-700 m-0'>
+    <nav className='select-none bg-white flex w-screen h-16 justify-between items-center px-8 sticky top-0  drop-shadow-lg shadow-purple-700 m-0 dark:bg-gray-700'>
       <div className='flex items-center gap-4'>
         <img
           className='pointer-events-none h-8 w-8'
@@ -55,12 +66,14 @@ const Header = (props) => {
             />
           )
         })}
-        <img
-          className='h-8 w-8 overflow-hidden'
-          src='light-mode.png'
-          alt='color mode toggle'
+        <video
+          type='video/webm'
+          className='h-8 w-8 overflow-hidden cursor-pointer'
+          src={video}
+          id='mode-icon'
           onClick={toggleTheme}
-        ></img>
+          onEnded={switchVideo}
+        ></video>
       </ul>
     </nav>
   )

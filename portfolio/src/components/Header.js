@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { Html } from '@react-three/drei'
 
 const Header = (props) => {
   const listOptions = ['Home', 'Projects', 'Skills', 'Contact']

@@ -21,9 +21,15 @@ code {
     @apply transition-all duration-500 bg-clip-text text-transparent bg-gradient-to-r via-pink-400 from-purple-700 bg-size-200 bg-pos-0 hover:bg-pos-100 to-purple-700;
   }
   .button {
-    @apply transition-all duration-500 text-xl pt-0 pb-0 m-0 pl-2 pr-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 dark:bg-gray-700;
+    @apply transition-all duration-300 bg-gray-200 font-medium text-xl pt-1 pb-1 m-0 pl-3 pr-3 rounded-lg hover:bg-gray-300 dark:hover:bg-black dark:bg-gray-900;
   }
   .button-container {
-    @apply transition-all duration-500 bg-gradient-to-r via-pink-400 from-purple-700 bg-size-200 bg-pos-0 hover:bg-pos-100  rounded-xl p-1 flex;
+    @apply transition-all duration-300 bg-gradient-to-r via-pink-400 from-purple-700 bg-size-200 bg-pos-0 hover:bg-pos-100  rounded-xl p-1 flex;
+  }
+  .button-none {
+    @apply text-xl pt-0 pb-0 m-0 pl-2 pr-2 outline rounded-lg outline-4 outline-gray-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:outline-white;
+  }
+  .button-container-none {
+    @apply flex;
   }
 }

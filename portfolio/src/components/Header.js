@@ -77,7 +77,7 @@ const Header = (props) => {
         })}
         <video
           type='video/webm'
-          className='h-8 w-8 overflow-hidden cursor-pointer'
+          className='transition-all duration-300 h-8 w-8 overflow-hidden cursor-pointer hover:h-9 hover:w-9'
           src={video}
           id='mode-icon'
           onClick={toggleTheme}

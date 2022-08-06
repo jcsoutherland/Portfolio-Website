@@ -1,10 +1,12 @@
+import ScrollBox from './ScrollBox'
+
 const Projects = (props) => {
   return (
     <section
-      className={`h-[calc(100vh-4rem)] transition-colors duration-300 flex items-center justify-between px-16 bg-gray-50 dark:bg-gray-800 ${props.className}`}
+      className={`relative h-[calc(100vh-4rem)] transition-colors duration-300 px-32 bg-gray-50 dark:bg-gray-800 ${props.className}`}
       id={props.id}
     >
-      Projects
+      <ScrollBox />
     </section>
   )
 }

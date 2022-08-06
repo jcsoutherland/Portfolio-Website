@@ -16,8 +16,13 @@ function ThreeElement(props) {
   return (
     <>
       <PerspectiveCamera makeDefault position={[-0.2, 1.5, 2.5]} />
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 15, 10]} angle={0.3} />
+      <ambientLight intensity={0} color={'blue'} />
+      <spotLight
+        intensity={15}
+        position={[10, 5, 10]}
+        angle={0.3}
+        color={'purple'}
+      />
       {/*<OrbitControls enablePan={false} enableZoom={false} />*/}
       <Stars />
       {/*<mesh>

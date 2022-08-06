@@ -19,7 +19,7 @@ const Landing = (props) => {
         <Canvas>
           <Html fullscreen position={[0, 0.6, 0]}>
             <div className='transition-colors duration-300 font-bold text-6xl'>
-              <span className='gradient-text to-purple-700'>
+              <span className='gradient-text to-pink-400'>
                 Joey Southerland
               </span>
               <span className='transition-colors duration-300 flex items-center gap-1 font-medium text-2xl text-gray-500 mx-10 dark:text-gray-400'>

@@ -3,7 +3,7 @@ import { useState } from 'react'
 const Header = (props) => {
   const listOptions = ['Home', 'Projects', 'Skills', 'Contact']
   const [visible, setVisible] = useState('Home')
-  const [video, setVideo] = useState('./media/light-dark-mode-standard.webm')
+  const [video, setVideo] = useState('./media/light-dark-mode-reverse.webm')
   const [headerMode, setHeaderMode] = useState('')
 
   const switchVideo = () => {

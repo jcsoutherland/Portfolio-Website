@@ -1,5 +1,16 @@
-import React from 'react'
-import { OrbitControls, PerspectiveCamera, Stars } from '@react-three/drei'
+import React, { Suspense } from 'react'
+import {
+  OrbitControls,
+  PerspectiveCamera,
+  Stars,
+  Html,
+  useGLTF,
+} from '@react-three/drei'
+
+export const Model = () => {
+  const gltf = useGLTF('/computer-model/scene.gltf', true)
+  return <primitive object={gltf.scene} dispose={null} />
+}
 
 function ThreeElement(props) {
   return (
@@ -9,10 +20,15 @@ function ThreeElement(props) {
       <spotLight position={[10, 15, 10]} angle={0.3} />
       {/*<OrbitControls enablePan={false} enableZoom={false} />*/}
       <Stars />
-      <mesh>
+      {/*<mesh>
         <boxGeometry args={[2, 2, 2]} />
         <meshStandardMaterial color='hotpink' />
-      </mesh>
+      </mesh>*/}
+      <Suspense fallback={null}>
+        <mesh position={[0.8, 0, -0.5]} rotation={[0, -0.5, 0]}>
+          <Model />
+        </mesh>
+      </Suspense>
     </>
   )
 }

@@ -47,7 +47,7 @@ const Header = (props) => {
 
   return (
     <nav
-      className={`transition-colors duration-300 select-none bg-white flex w-screen h-16 justify-between items-center px-8 sticky top-0 ${headerMode} m-0 dark:bg-gray-700`}
+      className={`transition-colors duration-300 select-none bg-gray-100 flex w-screen h-16 justify-between items-center px-8 sticky top-0 ${headerMode} m-0 dark:bg-gray-700`}
     >
       <div className='flex items-center gap-4'>
         <img

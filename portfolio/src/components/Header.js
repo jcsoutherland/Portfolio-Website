@@ -3,13 +3,14 @@ import { useState } from 'react'
 const Header = (props) => {
   const listOptions = ['Home', 'Projects', 'Skills', 'Contact']
   const [visible, setVisible] = useState('Home')
-  const [video, setVideo] = useState('light-dark-mode-standard.webm')
+  const [video, setVideo] = useState('./media/light-dark-mode-standard.webm')
+  const [headerMode, setHeaderMode] = useState('')
 
   const switchVideo = () => {
-    if (video === 'light-dark-mode-standard.webm') {
-      setVideo('light-dark-mode-reverse.webm')
+    if (video === './media/light-dark-mode-standard.webm') {
+      setVideo('./media/light-dark-mode-reverse.webm')
     } else {
-      setVideo('light-dark-mode-standard.webm')
+      setVideo('./media/light-dark-mode-standard.webm')
     }
   }
 
@@ -28,6 +29,11 @@ const Header = (props) => {
     let windowTop = document.documentElement.scrollTop
     const windowHeight = document.documentElement.clientHeight
     let middleWindow = windowTop + windowHeight / 2
+    if (windowTop === 0) {
+      setHeaderMode('')
+    } else {
+      setHeaderMode('drop-shadow-lg')
+    }
     if (middleWindow > 64 && middleWindow < 64 + windowHeight - 64) {
       setVisible('Home')
     } else if (middleWindow > 976 && middleWindow < 976 + windowHeight - 64) {
@@ -40,15 +46,17 @@ const Header = (props) => {
   })
 
   return (
-    <nav className='transition-colors duration-300 select-none bg-white flex w-screen h-16 justify-between items-center px-8 sticky top-0  drop-shadow-lg  m-0 dark:bg-gray-700'>
+    <nav
+      className={`transition-colors duration-300 select-none bg-white flex w-screen h-16 justify-between items-center px-8 sticky top-0 ${headerMode} m-0 dark:bg-gray-700`}
+    >
       <div className='flex items-center gap-4'>
         <img
           className='pointer-events-none h-8 w-8'
-          src='favicon.png'
+          src='./media/favicon.png'
           alt='Logo'
         />
         <label
-          className='transition-colors duration-300 font-bold text-3xl text-purple-700 dark:text-purple-500 cursor-pointer'
+          className='font-bold text-3xl gradient-text to-purple-700 cursor-pointer'
           onClick={props.onClick}
           id='logo-btn'
         >

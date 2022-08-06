@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { Html } from '@react-three/drei'
 
 const Header = (props) => {
   const listOptions = ['Home', 'Projects', 'Skills', 'Contact']
@@ -49,7 +47,8 @@ const Header = (props) => {
 
   return (
     <nav
-      className={`transition-colors duration-300 select-none bg-gray-100 flex w-screen h-16 justify-between items-center px-8 sticky top-0 ${headerMode} m-0 dark:bg-gray-700`}
+      className={`z-10 transition-colors duration-300 select-none bg-gray-100 flex w-screen h-16 justify-between items-center px-8 sticky top-0 ${headerMode} m-0 dark:bg-gray-700`}
+      id={props.id}
     >
       <div className='flex items-center gap-4'>
         <img

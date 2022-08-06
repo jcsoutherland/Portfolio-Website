@@ -1,10 +1,9 @@
 import ThreeElement from './ThreeElement'
-import { useState } from 'react'
 
 const Landing = (props) => {
   return (
     <section
-      className={`cursor-default transition-colors duration-300 h-[calc(100vh-4rem)] flex items-center justify-between  bg-gray-100 dark:bg-gray-700 ${props.className}`}
+      className={`z-0 cursor-default transition-colors duration-300 h-[calc(100vh-4rem)] flex items-center justify-between  bg-gray-100 dark:bg-gray-700 ${props.className}`}
       id={props.id}
     >
       <div className='h-full w-full'>

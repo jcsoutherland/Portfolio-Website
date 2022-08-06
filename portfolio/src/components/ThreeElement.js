@@ -1,12 +1,6 @@
 import React, { Suspense, useRef, useState } from 'react'
-import {
-  OrbitControls,
-  PerspectiveCamera,
-  Stars,
-  Html,
-  useGLTF,
-} from '@react-three/drei'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { PerspectiveCamera, Stars, Html, useGLTF } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 import { ButtonContainer } from './Landing'
 
 export const Model = () => {

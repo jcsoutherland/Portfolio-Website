@@ -3,6 +3,8 @@ import Header from './components/Header'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
+import { Canvas } from '@react-three/fiber'
+import { Html } from '@react-three/drei'
 
 function App() {
   const scrollToHandler = (e) => {
@@ -22,7 +24,7 @@ function App() {
 
   return (
     <>
-      <Header onClick={scrollToHandler} />
+      <Header onClick={scrollToHandler} id='nav-bar' />
       <div className='flex flex-col'>
         <Landing className='Home' id='view-box' />
         <Projects className='Projects' id='view-box' />

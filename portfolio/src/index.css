@@ -10,6 +10,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  @apply transition-all duration-300;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -17,7 +21,7 @@ code {
 
 @layer components {
   .gradient-text {
-    @apply transition-all duration-500 bg-clip-text text-transparent bg-gradient-to-r via-purple-700 from-pink-400 bg-size-200 bg-pos-0 hover:bg-pos-100 to-pink-400;
+    @apply transition-all duration-500 bg-clip-text text-transparent bg-gradient-to-r via-purple-600 from-pink-400 bg-size-200 bg-pos-0 hover:bg-pos-100 to-pink-400;
   }
   .button {
     @apply transition-all duration-300 bg-gray-200 font-medium text-xl pt-1 pb-1 m-0 pl-3 pr-3 rounded-lg hover:bg-gray-300 dark:hover:bg-black dark:bg-gray-900;

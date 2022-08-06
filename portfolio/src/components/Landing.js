@@ -1,4 +1,4 @@
-import ThreeElement from './ThreeElement'
+import ThreeElement from './ThreeD/ThreeElement'
 
 const Landing = (props) => {
   return (
@@ -10,36 +10,6 @@ const Landing = (props) => {
         <ThreeElement />
       </div>
     </section>
-  )
-}
-
-export const ButtonContainer = () => {
-  return (
-    <div className='flex items-center gap-4 ml-16 pt-2'>
-      <div className='button-container-none'>
-        <button
-          className='button'
-          onClick={() => {
-            window.open(
-              'https://www.linkedin.com/in/joey-southerland-ksu/',
-              '_blank'
-            )
-          }}
-        >
-          <span className='select-none dark:text-white'>LinkedIn</span>
-        </button>
-      </div>
-      <div className='button-container-none'>
-        <button
-          className='button'
-          onClick={() => {
-            window.open('./media/Resume.pdf', '_blank')
-          }}
-        >
-          <span className='select-none dark:text-white'>Resume</span>
-        </button>
-      </div>
-    </div>
   )
 }
 

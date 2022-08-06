@@ -1,7 +1,6 @@
 import React, { Suspense, useRef, useState } from 'react'
 import { PerspectiveCamera, Stars, Html, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { ButtonContainer } from './Landing'
 
 export const Model = () => {
   const gltf = useGLTF('/computer-model/scene.gltf', true)
@@ -49,7 +48,7 @@ function ThreeElement(props) {
       onMouseMove={handleMouseMove}
     >
       <Html fullscreen position={[0.2, 0.6, 0]}>
-        <div className='transition-colors duration-300 font-bold text-6xl'>
+        <div className='transition-colors duration-300 font-bold text-7xl'>
           <span className='select-none gradient-text to-pink-400'>
             Joey Southerland
           </span>
@@ -74,6 +73,36 @@ function ThreeElement(props) {
         </mesh>
       </Suspense>
     </Canvas>
+  )
+}
+
+export const ButtonContainer = () => {
+  return (
+    <div className='flex items-center gap-4 ml-16 pt-2'>
+      <div className='button-container-none'>
+        <button
+          className='button'
+          onClick={() => {
+            window.open(
+              'https://www.linkedin.com/in/joey-southerland-ksu/',
+              '_blank'
+            )
+          }}
+        >
+          <span className='select-none dark:text-white'>LinkedIn</span>
+        </button>
+      </div>
+      <div className='button-container-none'>
+        <button
+          className='button'
+          onClick={() => {
+            window.open('./media/Resume.pdf', '_blank')
+          }}
+        >
+          <span className='select-none dark:text-white'>Resume</span>
+        </button>
+      </div>
+    </div>
   )
 }
 

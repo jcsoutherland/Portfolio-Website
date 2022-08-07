@@ -3,9 +3,9 @@ const BoxCard = (props) => {
 
   return (
     <div
-      className={`bg-white h-full w-full flex-grow-0 flex-shrink-0 flex items-center p-8 flex-col ${props.className}`}
+      className={`bg-white dark:bg-gray-600 rounded-3xl h-full w-full flex-grow-0 flex-shrink-0 flex items-center p-8 flex-col ${props.className}`}
     >
-      <span className='text-gray-700 text-4xl font-bold tracking-wide mb-4'>
+      <span className='text-gray-700 dark:text-gray-300 text-4xl font-bold tracking-wide mb-4'>
         {props.name}
       </span>
       <div
@@ -18,9 +18,9 @@ const BoxCard = (props) => {
         ></div>
         <div
           id='technology-icons'
-          className=' row-span-1 bg-gray-200 rounded-2xl overflow-hidden flex flex-col items-center'
+          className=' row-span-1 bg-gray-200 dark:bg-gray-700 rounded-2xl overflow-hidden flex flex-col items-center'
         >
-          <span className='text-gray-700 text-xl pt-2 font-bold tracking-wide'>
+          <span className='text-gray-700 dark:text-gray-300 text-xl pt-2 font-bold tracking-wide'>
             Tech Used
           </span>
           <div
@@ -32,12 +32,17 @@ const BoxCard = (props) => {
             })}
           </div>
         </div>
-        <p
-          id='project-description'
-          className='row-span-3 p-4 text-gray-700  bg-gray-200  rounded-2xl overflow-hidden'
-        >
-          {props.description}
-        </p>
+        <div className='row-span-3 p-4  bg-gray-200 dark:bg-gray-700 rounded-2xl overflow-hidden whitespace-normal'>
+          <h1 className='text-center text-xl pb-2 font-bold tracking-wide text-gray-700 dark:text-gray-300'>
+            Project Description
+          </h1>
+          <p
+            id='project-description'
+            className='text-gray-700 dark:text-gray-300'
+          >
+            {props.description}
+          </p>
+        </div>
       </div>
     </div>
   )
@@ -46,7 +51,7 @@ const BoxCard = (props) => {
 const TechImage = (props) => {
   return (
     <span
-      className='h-14 w-14'
+      className='h-14 w-14 drop-shadow-lg'
       style={{
         backgroundImage: `url('./media/technology-icons/${props.img}')`,
         backgroundSize: 'cover',

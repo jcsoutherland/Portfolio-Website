@@ -22,11 +22,12 @@ module.exports = {
         },
       },
       animation: {
-        blink: 'blink 0.65s infinite',
+        blink: 'blink 0.8s infinite',
       },
     },
   },
   plugins: [
+    require('tailwind-scrollbar-hide'),
     function ({ addVariant }) {
       addVariant('child', '& > *')
       addVariant('child-hover', '& > *:hover')

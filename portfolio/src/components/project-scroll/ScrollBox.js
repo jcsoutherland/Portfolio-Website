@@ -10,47 +10,44 @@ const ScrollBox = () => {
 
   const [distance, setDistance] = useState(0)
 
-  const handleScroll = (e) => {
-    switch (e.target.id) {
-      case 'left-navigator':
-        console.log('left')
-        break
-      case 'right-navigator':
-        console.log('right')
-        break
-    }
+  const slideLeft = () => {
+    var slider = document.getElementById('scroll-parent')
+    slider.scrollLeft = slider.scrollLeft - slider.offsetWidth - 16
   }
 
-  {
-    /* absolute w-1/2 h-3/5 top-0 bottom-0 right-0 left-0 m-auto */
+  const slideRight = () => {
+    var slider = document.getElementById('scroll-parent')
+    slider.scrollLeft = slider.scrollLeft + slider.offsetWidth + 16
   }
 
   return (
     <div
-      className='drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)] bg-gray-100 overflow-hidden rounded-3xl'
+      className='drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)] bg-gradient-to-r p-0.5 via-purple-600 from-pink-400 to-pink-400 overflow-hidden rounded-3xl '
       id='scroll-container'
     >
-      <NavArrows onClick={handleScroll} />
-      <div
-        id='scroll-parent'
-        className={`gap-8 h-full w-full flex-grow-0 flex-shrink-0 flex`}
-      >
-        {cardArray.map((name, index) => {
-          return (
-            <BoxCard
-              key={index}
-              name={name}
-              img='./media/minions.jpeg'
-              techImageArray={[
-                'CSS3.png',
-                'HTML5.png',
-                'javascript.png',
-                'Tailwind.png',
-              ]}
-              description={defaultDescription}
-            />
-          )
-        })}
+      <NavArrows onClickLeft={slideLeft} onClickRight={slideRight} />
+      <div className='overflow-hidden rounded-3xl h-full w-full'>
+        <div
+          id='scroll-parent'
+          className={`gap-4 h-full w-full flex-grow-0 flex-shrink-0 flex overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide`}
+        >
+          {cardArray.map((name, index) => {
+            return (
+              <BoxCard
+                key={index}
+                name={name}
+                img='./media/minions.jpeg'
+                techImageArray={[
+                  'CSS3.png',
+                  'HTML5.png',
+                  'javascript.png',
+                  'Tailwind.png',
+                ]}
+                description={defaultDescription}
+              ></BoxCard>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

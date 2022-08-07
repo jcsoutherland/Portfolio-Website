@@ -3,7 +3,7 @@ const BoxCard = (props) => {
 
   return (
     <div
-      className={`bg-white dark:bg-gray-600 rounded-3xl h-full w-full flex-grow-0 flex-shrink-0 flex items-center p-8 flex-col ${props.className}`}
+      className={`snap-always snap-center bg-white dark:bg-gray-600 rounded-3xl h-full w-full flex-grow-0 flex-shrink-0 flex items-center p-8 flex-col ${props.className}`}
     >
       <span className='text-gray-700 dark:text-gray-300 text-4xl font-bold tracking-wide mb-4'>
         {props.name}

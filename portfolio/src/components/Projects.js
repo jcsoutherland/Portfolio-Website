@@ -8,7 +8,7 @@ const Projects = (props) => {
     >
       <div
         id='project-title'
-        className='text-gray-400 dark:text-gray-500 font-bold text-7xl'
+        className='text-gray-400 dark:text-gray-500 font-bold text-7xl pointer-events-none select-none'
       >
         PROJECTS
       </div>

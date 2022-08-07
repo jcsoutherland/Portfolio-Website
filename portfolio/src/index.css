@@ -12,6 +12,7 @@ body {
 
 * {
   @apply transition-all duration-300;
+  /*border: 2px solid red;*/
 }
 
 code {
@@ -34,5 +35,11 @@ code {
   }
   .button-container-none {
     @apply flex;
+  }
+  .section-title {
+    @apply text-gray-400 dark:text-gray-500 font-bold text-7xl pointer-events-none select-none;
+  }
+  .section-block {
+    @apply flex items-center justify-center h-[calc(100vh-4rem)];
   }
 }

@@ -34,7 +34,7 @@ const BoxCard = (props) => {
             })}
           </div>
         </div>
-        <div className='relative row-span-3 p-4  bg-gray-200 dark:bg-gray-700 rounded-2xl overflow-hidden whitespace-normal'>
+        <div className='row-span-3 p-4 relative flex flex-col items-center bg-gray-200 dark:bg-gray-700 rounded-2xl overflow-hidden whitespace-normal'>
           <h1 className='text-center text-xl pb-2 font-bold tracking-wide text-gray-700 dark:text-gray-300'>
             Project Description
           </h1>
@@ -44,19 +44,19 @@ const BoxCard = (props) => {
           >
             {props.description}
           </p>
-          <div className='flex items-center gap-4 ml-16 pt-2 absolute bottom-4'>
-            <div className='button-container-none'>
+          <div className='flex justify-center gap-4 pt-2 absolute bottom-4 left-0 right-0 mx-auto'>
+            <div className=''>
               <Button
                 text='Code'
                 src=''
-                className='bg-gray-400 hover:bg-gray-500 dark:text-gray-300 text-gray-800'
+                className='bg-gray-300 hover:bg-gray-400 dark:text-gray-300 text-gray-800'
               />
             </div>
-            <div className='button-container-none'>
+            <div className=''>
               <Button
                 text='Live Website'
                 src=''
-                className='bg-gray-400 hover:bg-gray-500 dark:text-gray-300 text-gray-800'
+                className='bg-gray-300 hover:bg-gray-400 dark:text-gray-300 text-gray-800'
               />
             </div>
           </div>

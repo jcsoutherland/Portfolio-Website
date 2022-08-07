@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const Header = (props) => {
-  const listOptions = ['Home', 'Projects', 'Skills', 'Contact']
+  const listOptions = ['Home', 'Projects', 'About', 'Contact']
   const [visible, setVisible] = useState('Home')
   const [video, setVideo] = useState('./media/light-dark-mode-reverse.webm')
   const [headerMode, setHeaderMode] = useState('')
@@ -39,7 +39,7 @@ const Header = (props) => {
     } else if (middleWindow > 976 && middleWindow < 976 + windowHeight - 64) {
       setVisible('Projects')
     } else if (middleWindow > 1888 && middleWindow < 1888 + windowHeight - 64) {
-      setVisible('Skills')
+      setVisible('About')
     } else if (middleWindow > 2800 && middleWindow < 2800 + windowHeight - 64) {
       setVisible('Contact')
     }
@@ -50,20 +50,14 @@ const Header = (props) => {
       className={`z-10 transition-colors duration-300 select-none bg-gray-100 flex w-screen h-16 justify-between items-center px-8 sticky top-0 ${headerMode} m-0 dark:bg-gray-700`}
       id={props.id}
     >
-      <div className='flex items-center gap-4'>
-        <img
-          className='pointer-events-none h-8 w-8'
-          src='./media/favicon.png'
-          alt='Logo'
-        />
-        <label
-          className='font-bold text-3xl text-purple-600 cursor-pointer'
-          onClick={props.onClick}
-          id='logo-btn'
-        >
-          Portfolio
-        </label>
-      </div>
+      <img
+        className='cursor-pointer h-8 w-8 '
+        src='./media/favicon.png'
+        alt='Logo'
+        id='logo-btn'
+        onClick={props.onClick}
+        draggable={false}
+      />
       <ul className='flex gap-8 font-bold px-12 items-center'>
         {listOptions.map((label, index) => {
           return (

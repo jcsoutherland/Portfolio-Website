@@ -1,10 +1,13 @@
 const Contact = (props) => {
   return (
     <section
-      className={`h-[calc(100vh-4rem)] flex items-center justify-between px-16 bg-gray-200 dark:bg-gray-800  ${props.className}`}
+      className={`section-block relative bg-gray-200 dark:bg-gray-800  ${props.className}`}
       id={props.id}
     >
-      Contact
+      <div id='about-title' className='section-title absolute left-32'>
+        CONTACT
+      </div>
+      <div className='w-1/2 h-1/2 bg-gray-500 absolute right-32'></div>
     </section>
   )
 }

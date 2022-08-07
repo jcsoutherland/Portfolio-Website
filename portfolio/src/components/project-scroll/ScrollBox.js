@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
-import BoxCard from './BoxCard'
+import { useState } from 'react'
 import NavArrows from './NavArrows'
 import { cardArray } from '../data/BoxCardArray'
 
@@ -18,7 +17,7 @@ const ScrollBox = () => {
 
   return (
     <div
-      className='drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)] bg-gradient-to-r p-0.5 via-purple-600 from-pink-400 to-pink-400 overflow-hidden rounded-3xl'
+      className='drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)] bg-gradient-to-r p-0.5 via-purple-600 from-pink-400 to-pink-400 overflow-hidden rounded-3xl relative'
       id='scroll-container'
     >
       <NavArrows onClickLeft={slideLeft} onClickRight={slideRight} />

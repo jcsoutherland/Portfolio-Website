@@ -1,6 +1,7 @@
 import React, { Suspense, useRef, useState } from 'react'
 import { PerspectiveCamera, Stars, Html, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import Button from '../Button'
 
 export const Model = () => {
   const gltf = useGLTF('/computer-model/scene.gltf', true)
@@ -28,6 +29,16 @@ function ThreeElement(props) {
       timestamp = now
     }
   }
+
+  /*position={[0.8, 0, -0.5]} rotation={[0, -0.5, 0]}
+        <ambientLight intensity={0} color={'blue'} />
+      <spotLight
+        intensity={15}
+        position={[10, 5, 10]}
+        angle={0.3}
+        color={'purple'}
+      />
+  */
 
   const ref = useRef()
   window.addEventListener('scroll', () => {
@@ -59,16 +70,16 @@ function ThreeElement(props) {
         </div>
       </Html>
       <PerspectiveCamera makeDefault position={[-0.2, 1.5, 2.5]} />
-      <ambientLight intensity={0} color={'blue'} />
+      <ambientLight intensity={0} color={'purple'} />
       <spotLight
-        intensity={15}
+        intensity={30}
         position={[10, 5, 10]}
         angle={0.3}
         color={'purple'}
       />
       <Stars />
       <Suspense fallback={null}>
-        <mesh ref={ref} position={[0.8, 0, -0.5]} rotation={[0, -0.5, 0]}>
+        <mesh ref={ref} position={[0.8, 0.2, -0.5]} rotation={[0, -0.5, 0]}>
           <Model />
         </mesh>
       </Suspense>
@@ -80,27 +91,18 @@ export const ButtonContainer = () => {
   return (
     <div className='flex items-center gap-4 ml-16 pt-2'>
       <div className='button-container-none'>
-        <button
-          className='button'
-          onClick={() => {
-            window.open(
-              'https://www.linkedin.com/in/joey-southerland-ksu/',
-              '_blank'
-            )
-          }}
-        >
-          <span className='select-none dark:text-white'>LinkedIn</span>
-        </button>
+        <Button
+          text='LinkedIn'
+          src="https://www.linkedin.com/in/joey-southerland-ksu/'"
+          className='dark:text-white'
+        />
       </div>
       <div className='button-container-none'>
-        <button
-          className='button'
-          onClick={() => {
-            window.open('./media/Resume.pdf', '_blank')
-          }}
-        >
-          <span className='select-none dark:text-white'>Resume</span>
-        </button>
+        <Button
+          text='Resume'
+          src='./media/Resume.pdf'
+          className='dark:text-white'
+        />
       </div>
     </div>
   )

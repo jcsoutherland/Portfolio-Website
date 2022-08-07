@@ -5,26 +5,14 @@ import { cardArray } from '../data/BoxCardArray'
 
 const ScrollBox = () => {
   const [boxArray, setBoxArray] = useState(cardArray)
-  const [disabled, setDisabled] = useState(false)
-  const [prevScroll, setPrevScroll] = useState(0)
 
-  useEffect(() => {
-    const boxArrayCloned = [...boxArray]
-    boxArrayCloned.unshift(boxArrayCloned[boxArrayCloned.length - 1])
-    boxArrayCloned.push(boxArrayCloned[1])
-    setBoxArray(boxArrayCloned)
-  }, [])
-
-  const slideLeft = (e) => {
+  const slideLeft = () => {
     var slider = document.getElementById('scroll-parent')
-
-    setPrevScroll(slider.scrollLeft)
     slider.scrollLeft = slider.scrollLeft - slider.offsetWidth - 16
   }
 
-  const slideRight = (e) => {
+  const slideRight = () => {
     var slider = document.getElementById('scroll-parent')
-    setPrevScroll(slider.scrollLeft)
     slider.scrollLeft = slider.scrollLeft + slider.offsetWidth + 16
   }
 

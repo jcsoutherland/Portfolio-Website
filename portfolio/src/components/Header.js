@@ -57,7 +57,7 @@ const Header = (props) => {
           alt='Logo'
         />
         <label
-          className='font-bold text-3xl gradient-text to-pink-400 cursor-pointer'
+          className='font-bold text-3xl text-purple-600 cursor-pointer'
           onClick={props.onClick}
           id='logo-btn'
         >

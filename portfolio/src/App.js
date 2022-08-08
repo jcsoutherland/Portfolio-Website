@@ -3,7 +3,6 @@ import Header from './components/Header'
 import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
-import HamburgerHeader from './components/HamburgerHeader'
 
 function App() {
   let isMobile = false

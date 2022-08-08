@@ -3,26 +3,10 @@ import { useState } from 'react'
 const Header = (props) => {
   const listOptions = ['Home', 'Projects', 'About', 'Contact']
   const [visible, setVisible] = useState('Home')
-  const [video, setVideo] = useState('./media/light-dark-mode-reverse.webm')
   const [headerMode, setHeaderMode] = useState('')
-
-  const switchVideo = () => {
-    if (video === './media/light-dark-mode-standard.webm') {
-      setVideo('./media/light-dark-mode-reverse.webm')
-    } else {
-      setVideo('./media/light-dark-mode-standard.webm')
-    }
-  }
+  const HEADER_HEIGHT = 64
 
   const toggleTheme = (e) => {
-    /*if (e.target.paused) {
-      e.target.play()
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark')
-      } else {
-        document.documentElement.classList.add('dark')
-      }
-    }*/
     if (document.documentElement.classList.contains('dark')) {
       document.documentElement.classList.remove('dark')
     } else {
@@ -34,39 +18,51 @@ const Header = (props) => {
     let windowTop = document.documentElement.scrollTop
     const windowHeight = document.documentElement.clientHeight
     let middleWindow = windowTop + windowHeight / 2
+    const section = document.getElementById('landing')
+    const sectionHeight = section.offsetHeight
     if (windowTop === 0) {
       setHeaderMode('')
     } else {
       setHeaderMode('drop-shadow-lg')
     }
-    if (middleWindow > 64 && middleWindow < 64 + windowHeight - 64) {
+    if (
+      middleWindow > HEADER_HEIGHT &&
+      middleWindow < HEADER_HEIGHT + windowHeight - HEADER_HEIGHT
+    ) {
       setVisible('Home')
-    } else if (middleWindow > 976 && middleWindow < 976 + windowHeight - 64) {
+    } else if (
+      middleWindow > sectionHeight &&
+      middleWindow < sectionHeight + windowHeight - HEADER_HEIGHT
+    ) {
       setVisible('Projects')
-    } else if (middleWindow > 1888 && middleWindow < 1888 + windowHeight - 64) {
+    } else if (
+      middleWindow > sectionHeight * 2 &&
+      middleWindow < sectionHeight * 2 + windowHeight - HEADER_HEIGHT
+    ) {
       setVisible('About')
-    } else if (middleWindow > 2800 && middleWindow < 2800 + windowHeight - 64) {
+    } else if (
+      middleWindow > sectionHeight * 3 &&
+      middleWindow < sectionHeight * 3 + windowHeight - HEADER_HEIGHT
+    ) {
       setVisible('Contact')
     }
   })
 
   return (
     <nav
-      className={`sticky top-0 z-[60] flex h-16 select-none items-center justify-center bg-gray-100 xl:justify-between ${headerMode} m-0 dark:bg-gray-700 xl:p-8`}
+      className={`sticky top-0 z-[60] flex h-16 select-none items-center justify-center bg-gray-100 sm:justify-between ${headerMode} m-0 dark:bg-gray-700 sm:p-8`}
       id={props.id}
     >
-      {!props.mobile && (
-        <img
-          className='h-8 w-8 cursor-pointer'
-          src='./media/favicon.png'
-          alt='Logo'
-          id='logo-btn'
-          onClick={props.onClick}
-          draggable={false}
-        />
-      )}
+      <img
+        className='hidden h-8 w-8 cursor-pointer sm:inline-block'
+        src='./media/favicon.png'
+        alt='Logo'
+        id='logo-btn'
+        onClick={props.onClick}
+        draggable={false}
+      />
 
-      <ul className='flex items-center gap-4 font-bold lg:gap-8'>
+      <ul className='flex items-center gap-4 font-bold sm:gap-8'>
         {listOptions.map((label, index) => {
           return (
             <ListItem
@@ -77,14 +73,6 @@ const Header = (props) => {
             />
           )
         })}
-        {/*<video
-          type='video/webm'
-          className='h-8 w-8 cursor-pointer hover:h-9 hover:w-9'
-          src={video}
-          id='mode-icon'
-          onClick={toggleTheme}
-          onEnded={switchVideo}
-        ></video>*/}
         <span
           className='h-8 w-8 cursor-pointer bg-image-two dark:bg-image-one'
           id='mode-icon'

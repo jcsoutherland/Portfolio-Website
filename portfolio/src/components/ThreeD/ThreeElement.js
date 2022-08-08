@@ -57,15 +57,15 @@ function ThreeElement(props) {
         setMouseDown(false)
       }}
       onMouseMove={handleMouseMove}
-      className='z-0'
+      className={`z-0 ${props.className}`}
     >
       <Html fullscreen position={[0.2, 0.6, 0]}>
-        <div className='transition-colors duration-300 font-bold text-7xl'>
-          <span className='select-none gradient-text to-pink-400'>
+        <div className='text-7xl font-bold transition-colors duration-300'>
+          <span className='gradient-text select-none to-pink-400'>
             Joey Southerland
           </span>
-          <span className='select-none transition-colors duration-300 flex items-center gap-1 font-medium text-2xl text-gray-500 mx-10 dark:text-gray-400'>
-            Front-end web developer
+          <span className='mx-16 flex select-none items-center gap-1 text-2xl font-medium text-gray-500 transition-colors duration-300 dark:text-gray-400'>
+            Software developer
           </span>
           <ButtonContainer />
         </div>
@@ -90,7 +90,7 @@ function ThreeElement(props) {
 
 export const ButtonContainer = () => {
   return (
-    <div className='flex items-center gap-4 ml-16 pt-2'>
+    <div className='ml-16 flex items-center gap-4 pt-2'>
       <div className='button-container-none'>
         <Button
           text='LinkedIn'

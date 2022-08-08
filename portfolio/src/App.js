@@ -29,7 +29,7 @@ function App() {
   return (
     <>
       <Header onClick={scrollToHandler} id='nav-bar' mobile={isMobile} />
-      <Landing className='Home' mobile={isMobile} />
+      <Landing className='Home' mobile={isMobile} id='landing' />
       <Projects className='Projects' mobile={isMobile} />
       <About className='About' mobile={isMobile} />
       <Contact className='Contact' mobile={isMobile} />

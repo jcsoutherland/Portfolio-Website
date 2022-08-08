@@ -10,39 +10,39 @@ const BoxCard = (props) => {
 
   return (
     <div
-      className={`snap-always snap-center overflow-hidden bg-white dark:bg-gray-600 rounded-3xl h-full w-full grow-0 shrink-0 flex items-center p-8 flex-col ${props.className}`}
+      className={`flex h-full w-full shrink-0 grow-0 snap-center snap-always flex-col items-center overflow-hidden rounded-3xl bg-white p-8 dark:bg-gray-600 ${props.className}`}
     >
-      <span className='text-gray-700 dark:text-gray-300 text-4xl font-bold tracking-wide mb-4'>
+      <span className='mb-4 text-4xl font-bold tracking-wide text-gray-700 dark:text-gray-300'>
         {props.name}
       </span>
       <div
         id='grid-projects'
-        className='h-full w-full grid grid-cols-[200px_minmax(1fr,1fr)_0px] grid-rows-3 lg:grid-flow-col grid-flow-row  lg:px-12 gap-4 pb-8'
+        className='grid h-full w-full grid-flow-row grid-cols-[200px_minmax(1fr,1fr)_0px] grid-rows-3 gap-4  pb-8 lg:grid-flow-col lg:px-12'
       >
         <div
-          className='row-span-2 rounded-2xl overflow-hidden'
+          className='row-span-2 overflow-hidden rounded-2xl'
           style={{ backgroundImage: `url(${props.img})` }}
         ></div>
         <div
           id='technology-icons'
-          className=' row-span-1 bg-gray-200 dark:bg-gray-700 rounded-2xl overflow-hidden flex flex-col items-center'
+          className=' row-span-1 flex flex-col items-center overflow-hidden rounded-2xl bg-gray-200 dark:bg-gray-700'
         >
-          <span className='text-gray-700 dark:text-gray-300 text-xl pt-2 font-bold tracking-wide'>
+          <span className='text-xl font-bold tracking-wide text-gray-700 dark:text-gray-300'>
             Tech Used
           </span>
           <div
             id='logo-container'
-            className='flex items-center m-4 justify-center gap-4 lg:gap-8 w-full h-full'
+            className='flex h-full w-full items-center justify-center gap-4 p-3 lg:gap-8'
           >
             {techImageArray.map((img, index) => {
               return <TechImage img={img} key={index} />
             })}
           </div>
         </div>
-        <div className='row-span-3 p-4 flex flex-col justify-between items-center bg-gray-200 dark:bg-gray-700 rounded-2xl overflow-hidden whitespace-normal'>
+        <div className='row-span-3 flex flex-col items-center justify-between overflow-hidden whitespace-normal rounded-2xl bg-gray-200 p-4 dark:bg-gray-700'>
           {!isMobile && (
             <div>
-              <h1 className='text-center text-xl pb-2 font-bold tracking-wide text-gray-700 dark:text-gray-300'>
+              <h1 className='pb-2 text-center text-xl font-bold tracking-wide text-gray-700 dark:text-gray-300'>
                 Project Description
               </h1>
               <p
@@ -53,19 +53,19 @@ const BoxCard = (props) => {
               </p>
             </div>
           )}
-          <div className='flex lg:flex-row flex-col gap-4'>
+          <div className='flex flex-row gap-4'>
             <div className=''>
               <Button
                 text='Code'
                 src=''
-                className='bg-gray-300 hover:bg-gray-400 dark:text-gray-300 text-gray-800 w-full'
+                className='w-full bg-gray-300 text-gray-800 hover:bg-gray-400 dark:text-gray-300'
               />
             </div>
             <div className=''>
               <Button
                 text='Website'
                 src=''
-                className='bg-gray-300 hover:bg-gray-400 dark:text-gray-300 text-gray-800 w-full'
+                className='w-full bg-gray-300 text-gray-800 hover:bg-gray-400 dark:text-gray-300'
               />
             </div>
           </div>
@@ -78,7 +78,7 @@ const BoxCard = (props) => {
 const TechImage = (props) => {
   return (
     <span
-      className='h-8 w-8 lg:h-14 lg:w-14 drop-shadow-lg'
+      className='h-8 w-8 drop-shadow-lg lg:h-14 lg:w-14 smheight:h-8 smheight:w-8'
       style={{
         backgroundImage: `url('./media/technology-icons/${props.img}')`,
         backgroundSize: 'cover',

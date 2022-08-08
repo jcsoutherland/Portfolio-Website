@@ -4,6 +4,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      screens: { smheight: { raw: '(max-height: 700px),(min-width:2000px)' } },
       backgroundSize: {
         'size-200': '200% 200%',
       },

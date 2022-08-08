@@ -47,7 +47,7 @@ const Header = (props) => {
 
   return (
     <nav
-      className={`z-10 select-none bg-gray-100 flex h-16 justify-center xl:justify-between items-center sticky top-0 ${headerMode} m-0 dark:bg-gray-700 xl:p-8`}
+      className={`z-[60] select-none bg-gray-100 flex h-16 justify-center xl:justify-between items-center sticky top-0 ${headerMode} m-0 dark:bg-gray-700 xl:p-8`}
       id={props.id}
     >
       {!props.mobile && (

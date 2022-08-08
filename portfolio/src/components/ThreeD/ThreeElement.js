@@ -57,6 +57,7 @@ function ThreeElement(props) {
         setMouseDown(false)
       }}
       onMouseMove={handleMouseMove}
+      className='z-0'
     >
       <Html fullscreen position={[0.2, 0.6, 0]}>
         <div className='transition-colors duration-300 font-bold text-7xl'>

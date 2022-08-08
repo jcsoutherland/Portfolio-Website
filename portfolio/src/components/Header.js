@@ -47,12 +47,12 @@ const Header = (props) => {
 
   return (
     <nav
-      className={`z-[60] select-none bg-gray-100 flex h-16 justify-center xl:justify-between items-center sticky top-0 ${headerMode} m-0 dark:bg-gray-700 xl:p-8`}
+      className={`sticky top-0 z-[60] flex h-16 select-none items-center justify-center bg-gray-100 xl:justify-between ${headerMode} m-0 dark:bg-gray-700 xl:p-8`}
       id={props.id}
     >
       {!props.mobile && (
         <img
-          className='cursor-pointer h-8 w-8'
+          className='h-8 w-8 cursor-pointer'
           src='./media/favicon.png'
           alt='Logo'
           id='logo-btn'
@@ -61,7 +61,7 @@ const Header = (props) => {
         />
       )}
 
-      <ul className='flex gap-8 font-bold items-center'>
+      <ul className='flex items-center gap-4 font-bold lg:gap-8'>
         {listOptions.map((label, index) => {
           return (
             <ListItem
@@ -91,8 +91,8 @@ export const ListItem = ({ label, onClick, visible }) => {
       <button
         className={
           visible === label
-            ? 'transition-colors duration-300 text-purple-700 dark:text-purple-500'
-            : 'transition-colors duration-300 text-gray-400 hover:text-purple-400 active:text-purple-700 dark:hover:text-purple-300'
+            ? 'text-purple-700 transition-colors duration-300 dark:text-purple-500'
+            : 'text-gray-400 transition-colors duration-300 hover:text-purple-400 active:text-purple-700 dark:hover:text-purple-300'
         }
         id={label}
         onClick={onClick}

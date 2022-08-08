@@ -12,6 +12,10 @@ module.exports = {
         'pos-0': '0% 0%',
         'pos-100': '100% 100%',
       },
+      backgroundImage: (theme) => ({
+        'image-one': "url('/public/media/light-mode.svg')",
+        'image-two': "url('/public/media/dark-mode.svg')",
+      }),
       keyframes: {
         blink: {
           '0%, 100%': {
@@ -25,6 +29,11 @@ module.exports = {
       animation: {
         blink: 'blink 0.8s infinite',
       },
+    },
+  },
+  variants: {
+    extend: {
+      backgroundImage: ['dark'],
     },
   },
   plugins: [

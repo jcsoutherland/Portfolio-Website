@@ -15,13 +15,18 @@ const Header = (props) => {
   }
 
   const toggleTheme = (e) => {
-    if (e.target.paused) {
+    /*if (e.target.paused) {
       e.target.play()
       if (document.documentElement.classList.contains('dark')) {
         document.documentElement.classList.remove('dark')
       } else {
         document.documentElement.classList.add('dark')
       }
+    }*/
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark')
+    } else {
+      document.documentElement.classList.add('dark')
     }
   }
 
@@ -72,14 +77,19 @@ const Header = (props) => {
             />
           )
         })}
-        <video
+        {/*<video
           type='video/webm'
           className='h-8 w-8 cursor-pointer hover:h-9 hover:w-9'
           src={video}
           id='mode-icon'
           onClick={toggleTheme}
           onEnded={switchVideo}
-        ></video>
+        ></video>*/}
+        <span
+          className='h-8 w-8 cursor-pointer bg-image-two dark:bg-image-one'
+          id='mode-icon'
+          onClick={toggleTheme}
+        />
       </ul>
     </nav>
   )

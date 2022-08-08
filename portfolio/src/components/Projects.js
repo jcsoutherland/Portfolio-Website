@@ -3,14 +3,14 @@ import ScrollBox from './project-scroll/ScrollBox'
 const Projects = (props) => {
   return (
     <section
-      className={`section-block bg-gray-200 dark:bg-gray-800 relative  ${props.className}`}
+      className={`section-block bg-gray-200 dark:bg-gray-800  ${props.className}`}
       id={props.id}
     >
-      <div id='project-title' className='section-title absolute left-32'>
+      <div id='project-title' className='section-title'>
         PROJECTS
       </div>
-      <div className='absolute right-32 w-[55%]'>
-        <ScrollBox />
+      <div className='section-contents flex items-center w-3/4 h-3/4'>
+        {<ScrollBox />}
       </div>
     </section>
   )

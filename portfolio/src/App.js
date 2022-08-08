@@ -3,8 +3,15 @@ import Header from './components/Header'
 import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
+import HamburgerHeader from './components/HamburgerHeader'
 
 function App() {
+  let isMobile = false
+  var width = window.innerWidth > 0 ? window.innerWidth : window.screen.width
+  if (width < 1280) {
+    isMobile = true
+  }
+
   const scrollToHandler = (e) => {
     let element = document.querySelector('.Home')
     if (e.target.id !== 'logo-btn') {
@@ -22,13 +29,11 @@ function App() {
 
   return (
     <>
-      <Header onClick={scrollToHandler} id='nav-bar' />
-      <div className='flex flex-col'>
-        <Landing className='Home' id='view-box' />
-        <Projects className='Projects' id='view-box' />
-        <About className='About' id='view-box' />
-        <Contact className='Contact' id='view-box' />
-      </div>
+      <Header onClick={scrollToHandler} id='nav-bar' mobile={isMobile} />
+      <Landing className='Home' mobile={isMobile} />
+      <Projects className='Projects' mobile={isMobile} />
+      <About className='About' mobile={isMobile} />
+      <Contact className='Contact' mobile={isMobile} />
     </>
   )
 }

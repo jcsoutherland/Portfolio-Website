@@ -2,8 +2,14 @@ import { useState } from 'react'
 import NavArrows from './NavArrows'
 import { cardArray } from '../data/BoxCardArray'
 
-const ScrollBox = () => {
+const ScrollBox = (props) => {
   const [boxArray, setBoxArray] = useState(cardArray)
+
+  let isMobile = false
+  var width = window.innerWidth > 0 ? window.innerWidth : window.screen.width
+  if (width < 1280) {
+    isMobile = true
+  }
 
   const slideLeft = () => {
     var slider = document.getElementById('scroll-parent')
@@ -17,10 +23,12 @@ const ScrollBox = () => {
 
   return (
     <div
-      className='drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)] bg-gradient-to-r p-0.5 via-purple-600 from-pink-400 to-pink-400 overflow-hidden rounded-3xl relative'
+      className='drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)] bg-gradient-to-r p-0.5 via-purple-600 from-pink-400 to-pink-400 overflow-hidden rounded-3xl w-full xl:h-[80%] h-full'
       id='scroll-container'
     >
-      <NavArrows onClickLeft={slideLeft} onClickRight={slideRight} />
+      {!isMobile && (
+        <NavArrows onClickLeft={slideLeft} onClickRight={slideRight} />
+      )}
       <div className='overflow-hidden rounded-3xl h-full w-full'>
         <div
           id='scroll-parent'

@@ -47,18 +47,21 @@ const Header = (props) => {
 
   return (
     <nav
-      className={`z-10 transition-colors duration-300 select-none bg-gray-100 flex w-screen h-16 justify-between items-center px-8 sticky top-0 ${headerMode} m-0 dark:bg-gray-700`}
+      className={`z-10 select-none bg-gray-100 flex h-16 justify-center xl:justify-between items-center sticky top-0 ${headerMode} m-0 dark:bg-gray-700 xl:p-8`}
       id={props.id}
     >
-      <img
-        className='cursor-pointer h-8 w-8 '
-        src='./media/favicon.png'
-        alt='Logo'
-        id='logo-btn'
-        onClick={props.onClick}
-        draggable={false}
-      />
-      <ul className='flex gap-8 font-bold px-12 items-center'>
+      {!props.mobile && (
+        <img
+          className='cursor-pointer h-8 w-8'
+          src='./media/favicon.png'
+          alt='Logo'
+          id='logo-btn'
+          onClick={props.onClick}
+          draggable={false}
+        />
+      )}
+
+      <ul className='flex gap-8 font-bold items-center'>
         {listOptions.map((label, index) => {
           return (
             <ListItem
@@ -71,7 +74,7 @@ const Header = (props) => {
         })}
         <video
           type='video/webm'
-          className='transition-all duration-300 h-8 w-8 overflow-hidden cursor-pointer hover:h-9 hover:w-9'
+          className='h-8 w-8 cursor-pointer hover:h-9 hover:w-9'
           src={video}
           id='mode-icon'
           onClick={toggleTheme}

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -12,7 +18,6 @@ body {
 
 * {
   @apply transition-all duration-300;
-  /*border: 2px solid red;*/
 }
 
 code {
@@ -37,9 +42,12 @@ code {
     @apply flex;
   }
   .section-title {
-    @apply text-gray-400 dark:text-gray-500 font-bold text-7xl pointer-events-none select-none;
+    @apply text-gray-400 dark:text-gray-500 font-bold text-7xl pointer-events-none select-none xl:mx-auto xl:mt-0 mt-8;
   }
   .section-block {
-    @apply flex items-center justify-center h-[calc(100vh-4rem)];
+    @apply flex flex-col xl:flex-row items-center justify-between h-[calc(100vh-4rem)];
+  }
+  .section-contents {
+    @apply flex-none basis-1/2 my-auto xl:mx-16;
   }
 }

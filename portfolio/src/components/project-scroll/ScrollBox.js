@@ -23,16 +23,14 @@ const ScrollBox = (props) => {
 
   return (
     <div
-      className='drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)] bg-gradient-to-r p-0.5 via-purple-600 from-pink-400 to-pink-400 overflow-hidden rounded-3xl w-full xl:h-[80%] h-full'
+      className='contents-container h-full w-full to-pink-400 xl:h-1/2 xl:w-full'
       id='scroll-container'
     >
-      {!isMobile && (
-        <NavArrows onClickLeft={slideLeft} onClickRight={slideRight} />
-      )}
-      <div className='overflow-hidden rounded-3xl h-full w-full'>
+      <NavArrows onClickLeft={slideLeft} onClickRight={slideRight} />
+      <div className='h-full w-full overflow-hidden rounded-3xl'>
         <div
           id='scroll-parent'
-          className={`gap-4 h-full w-full flex-grow-0 flex-shrink-0 flex overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide snap-x snap-mandatory`}
+          className={`scroll flex h-full w-full flex-shrink-0 flex-grow-0 snap-x snap-mandatory gap-4 overflow-x-scroll scroll-smooth whitespace-nowrap scrollbar-hide`}
         >
           {boxArray}
         </div>

@@ -2,11 +2,6 @@ import Button from '../Button'
 
 const BoxCard = (props) => {
   const techImageArray = props.techImageArray
-  let isMobile = false
-  var width = window.innerWidth > 0 ? window.innerWidth : window.screen.width
-  if (width < 1280) {
-    isMobile = true
-  }
 
   return (
     <div
@@ -17,11 +12,14 @@ const BoxCard = (props) => {
       </span>
       <div
         id='grid-projects'
-        className='grid h-full w-full grid-flow-row grid-cols-[200px_minmax(1fr,1fr)_0px] grid-rows-3 gap-4  pb-8 lg:grid-flow-col lg:px-12'
+        className='grid h-full w-full grid-flow-row grid-cols-[500px_minmax(1fr,1fr)_0px] grid-rows-3 gap-4  pb-8 sm:px-12 xl:grid-flow-col'
       >
         <div
           className='row-span-2 overflow-hidden rounded-2xl'
-          style={{ backgroundImage: `url(${props.img})` }}
+          style={{
+            backgroundImage: `url(${props.img})`,
+            backgroundSize: 'cover',
+          }}
         ></div>
         <div
           id='technology-icons'
@@ -32,7 +30,7 @@ const BoxCard = (props) => {
           </span>
           <div
             id='logo-container'
-            className='flex h-full w-full items-center justify-center gap-4 p-3 lg:gap-8'
+            className='flex h-full w-full items-center justify-center gap-4 p-3 lg:gap-4'
           >
             {techImageArray.map((img, index) => {
               return <TechImage img={img} key={index} />
@@ -40,19 +38,17 @@ const BoxCard = (props) => {
           </div>
         </div>
         <div className='row-span-3 flex flex-col items-center justify-between overflow-hidden whitespace-normal rounded-2xl bg-gray-200 p-4 dark:bg-gray-700'>
-          {!isMobile && (
-            <div>
-              <h1 className='pb-2 text-center text-xl font-bold tracking-wide text-gray-700 dark:text-gray-300'>
-                Project Description
-              </h1>
-              <p
-                id='project-description'
-                className='text-gray-700 dark:text-gray-300'
-              >
-                {props.description}
-              </p>
-            </div>
-          )}
+          <div className='hidden pb-2 sm:block'>
+            <h1 className='pb-2 text-center text-xl font-bold tracking-wide text-gray-700 dark:text-gray-300'>
+              Project Description
+            </h1>
+            <p
+              id='project-description'
+              className='text-gray-700 dark:text-gray-300'
+            >
+              {props.description}
+            </p>
+          </div>
           <div className='flex flex-row gap-4'>
             <div className=''>
               <Button
@@ -78,7 +74,7 @@ const BoxCard = (props) => {
 const TechImage = (props) => {
   return (
     <span
-      className='h-8 w-8 drop-shadow-lg lg:h-14 lg:w-14 smheight:h-8 smheight:w-8'
+      className='h-8 w-8 drop-shadow-lg smheight:h-8 smheight:w-8'
       style={{
         backgroundImage: `url('./media/technology-icons/${props.img}')`,
         backgroundSize: 'cover',

@@ -67,7 +67,7 @@ const About = (props) => {
 const TechImage = (props) => {
   return (
     <span
-      className='aspect-square w-10 flex-[0_1_auto] drop-shadow-lg sm:w-14'
+      className='aspect-square w-7 flex-[0_1_auto] drop-shadow-lg sm:w-14'
       style={{
         backgroundImage: `url('./media/technology-icons/${props.src}.svg')`,
         backgroundSize: 'cover',

@@ -26,10 +26,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#slot-gradient {
+#background-gradient {
   background-size: 100% 300%;
   background-image: var(--gradient);
-  animation: gradient-slide 1s linear infinite;
+  animation: gradient-slide 1.5s linear infinite;
 }
 
 @keyframes gradient-slide {
@@ -87,6 +87,6 @@ code {
     @apply my-auto basis-1/2 xl:mx-16;
   }
   .contents-container {
-    @apply rounded-3xl bg-gradient-to-r from-pink-400 via-purple-600 p-0.5 drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)];
+    @apply rounded-3xl bg-gradient-to-r from-pink-400 via-purple-600 p-1 drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)];
   }
 }

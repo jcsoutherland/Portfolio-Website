@@ -12,7 +12,11 @@ const Projects = (props) => {
         PROJECTS
       </div>
       <div className='relative basis-full'>
-        <SlotMachine className='absolute right-0 left-0 top-auto bottom-auto m-auto mt-8 lg:top-0 lg:bottom-0 lg:my-auto lg:ml-0 '></SlotMachine>
+        <div
+          id='arrow-container'
+          className='absolute left-0 right-0 bottom-5 m-auto flex h-[10%] w-full'
+        ></div>
+        <SlotMachine className='absolute right-0 left-0 top-auto bottom-auto z-0 m-auto mt-8 lg:top-0 lg:bottom-0 lg:my-auto lg:ml-0 '></SlotMachine>
       </div>
     </section>
   )

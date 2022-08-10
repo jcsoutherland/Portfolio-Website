@@ -7,27 +7,28 @@ const ProjectCard = (props) => {
     >
       <span
         id='project-card-title'
-        className='mt-4 basis-[15%] text-xl font-bold tracking-wide'
+        className=' flex basis-[15%] items-center text-xl font-bold tracking-wide'
       >
-        PROJECT NAME
+        {props.name}
       </span>
+      {/*add project image*/}
       <span
         id='project-image'
-        className='h-[50%] w-[85%] basis-[60%] rounded-2xl bg-yellow-400'
+        className='h-[50%] w-[75%] basis-[60%] rounded-2xl bg-yellow-400'
       ></span>
-      <div className={`flex basis-[30%] items-center gap-4`}>
+      <div className={`flex basis-[20%] items-center gap-4 p-3`}>
         <div className='button-container-none'>
           <Button
             text='Code'
-            src=''
-            className='bg-pink-400 dark:text-gray-100'
+            src={props.codeLink}
+            className='bg-pink-400 text-gray-100'
           />
         </div>
         <div className='button-container-none'>
           <Button
             text='Website'
-            src=''
-            className='bg-pink-400 dark:text-gray-100'
+            src={props.websiteLink}
+            className='bg-pink-400 text-gray-100'
           />
         </div>
       </div>

@@ -15,7 +15,7 @@ const About = (props) => {
       >
         <div
           className='contents-container h-3/4 basis-[85%] to-pink-400 lg:h-1/2'
-          id='color-border'
+          id='background-gradient'
         >
           <div className='flex h-full w-full flex-col items-center justify-center rounded-3xl bg-white dark:bg-gray-600 sm:flex-row'>
             <div className='flex min-h-0 basis-full flex-col sm:h-full'>

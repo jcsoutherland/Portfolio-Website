@@ -44,10 +44,11 @@ const SlotMachine = (props) => {
     }
   }
 
+  //drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)]
   return (
     <div
       id='background-gradient'
-      className={`${props.className} h-[80%] max-h-[800px] w-[300px] rounded-3xl p-1`}
+      className={`${props.className} h-[80%] max-h-[800px] w-[300px] p-1 xl:w-[500px]`}
     >
       <span
         id='up-arrow'
@@ -69,7 +70,7 @@ const SlotMachine = (props) => {
       ></span>
       <div
         id='slot-background'
-        className='relative h-full w-full overflow-hidden rounded-3xl bg-gray-900 '
+        className='relative h-full w-full overflow-hidden bg-gray-900 '
       >
         <div
           id='slot-shading'

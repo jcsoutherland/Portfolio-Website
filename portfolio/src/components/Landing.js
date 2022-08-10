@@ -12,10 +12,9 @@ const Landing = (props) => {
           <span className='gradient-text select-none to-pink-400 text-[80%]'>
             Joey Southerland
           </span>
-          <span className='mx-16 select-none text-[30%] font-medium text-gray-500 dark:text-gray-400'>
+          <span className='select-none text-[30%] font-medium text-gray-500 dark:text-gray-400'>
             Web developer
           </span>
-          <ButtonContainer />
         </div>
         <ThreeElement className='hidden lg:block' />
       </div>

@@ -67,6 +67,11 @@ code {
     monospace;
 }
 
+#linkedin:hover:focus {
+  filter: invert(95%) sepia(13%) saturate(53%) hue-rotate(182deg)
+    brightness(99%) contrast(88%);
+}
+
 @layer components {
   .gradient-text {
     @apply bg-gradient-to-r from-pink-400 via-purple-600 to-pink-400 bg-size-200 bg-clip-text bg-pos-0 text-transparent transition-all duration-500 hover:bg-pos-100;
@@ -87,6 +92,6 @@ code {
     @apply my-auto basis-1/2 xl:mx-16;
   }
   .contents-container {
-    @apply rounded-3xl bg-gradient-to-r from-pink-400 via-purple-600 p-1 drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)];
+    @apply bg-gradient-to-r from-pink-400 via-purple-600 p-1;
   }
 }

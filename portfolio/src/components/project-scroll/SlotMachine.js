@@ -51,7 +51,7 @@ const SlotMachine = (props) => {
     >
       <span
         id='up-arrow'
-        className='absolute left-0 top-[-20px] right-0 z-50 m-auto aspect-square w-12 drop-shadow-lg '
+        className='absolute left-0 top-[-20px] right-0 z-50 m-auto aspect-square w-12 drop-shadow-lg transition-all duration-300 hover:w-16 '
         style={{
           backgroundImage: `url('./media/up-arrow.svg')`,
           backgroundSize: 'cover',
@@ -60,7 +60,7 @@ const SlotMachine = (props) => {
       ></span>
       <span
         id='down-arrow'
-        className='absolute bottom-[-20px] left-0 right-0 z-50 m-auto aspect-square w-12 drop-shadow-lg '
+        className='absolute bottom-[-20px] left-0 right-0 z-50 m-auto aspect-square w-12 drop-shadow-lg transition-all duration-300 hover:w-16 '
         style={{
           backgroundImage: `url('./media/down-arrow.svg')`,
           backgroundSize: 'cover',
@@ -84,6 +84,12 @@ const SlotMachine = (props) => {
           id='slot-roller'
           className='absolute top-0 bottom-0 my-auto h-[15%] w-full bg-gradient-to-t from-black via-gray-600 to-black'
         ></div>
+      </div>
+      <div
+        id='scroll-button-mobile'
+        className='mt-8 mb-2 flex max-h-[10%] w-full items-center justify-center rounded-xl bg-gray-400 text-4xl font-bold tracking-wide text-gray-900 lg:hidden'
+      >
+        PLAY
       </div>
     </div>
   )

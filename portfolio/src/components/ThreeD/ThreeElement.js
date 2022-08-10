@@ -88,21 +88,21 @@ function ThreeElement(props) {
   )
 }
 
-export const ButtonContainer = () => {
+export const ButtonContainer = (props) => {
   return (
-    <div className='ml-16 flex items-center gap-4 pt-2'>
+    <div className={`ml-16 flex items-center gap-4 pt-2`}>
       <div className='button-container-none'>
         <Button
           text='LinkedIn'
           src="https://www.linkedin.com/in/joey-southerland-ksu/'"
-          className='dark:text-white'
+          className='bg-gray-200 hover:bg-gray-300 dark:bg-gray-900 dark:text-white dark:hover:bg-black'
         />
       </div>
       <div className='button-container-none'>
         <Button
           text='Resume'
           src='./media/Resume.pdf'
-          className='dark:text-white'
+          className='bg-gray-200 hover:bg-gray-300 dark:bg-gray-900 dark:text-white dark:hover:bg-black'
         />
       </div>
     </div>

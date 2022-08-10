@@ -10,7 +10,7 @@ const About = (props) => {
         ABOUT
       </div>
       <div
-        className='flex h-full min-h-0 flex-col items-center justify-center px-8 lg:basis-full lg:flex-row lg:px-0'
+        className='flex h-full min-h-0 flex-col items-center justify-center px-8 lg:basis-full lg:flex-row lg:justify-start lg:px-0'
         id='about-contents-container'
       >
         <div

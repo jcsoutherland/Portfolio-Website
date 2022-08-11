@@ -4,7 +4,7 @@ import Button from './Button'
 const About = (props) => {
   return (
     <section
-      className={`section-block bg-gray-100 dark:bg-gray-700 ${props.className}`}
+      className={`section-block bg-gray-200 dark:bg-gray-700 ${props.className}`}
       id={props.id}
     >
       <div id='about-title' className='section-title'>

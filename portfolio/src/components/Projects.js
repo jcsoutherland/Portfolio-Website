@@ -5,7 +5,7 @@ const Projects = (props) => {
   //make slot machine type thing with lever that spins all of them and randomly picks one for funzies
   return (
     <section
-      className={`section-block bg-gray-200 dark:bg-gray-800  ${props.className}`}
+      className={`section-block bg-gray-300 dark:bg-gray-800  ${props.className}`}
       id={props.id}
     >
       <div id='project-title' className='section-title'>

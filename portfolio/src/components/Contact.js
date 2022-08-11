@@ -1,7 +1,7 @@
 const Contact = (props) => {
   return (
     <section
-      className={`section-block bg-gray-200 dark:bg-gray-800  ${props.className}`}
+      className={`section-block bg-gray-300 dark:bg-gray-800  ${props.className}`}
       id={props.id}
     >
       <div id='about-title' className='section-title'>

@@ -50,7 +50,7 @@ const Header = (props) => {
 
   return (
     <nav
-      className={`sticky top-0 z-[60] flex h-16 select-none items-center justify-center bg-gray-100 sm:justify-between ${headerMode} m-0 dark:bg-gray-700 sm:p-8`}
+      className={`sticky top-0 z-[60] flex h-16 select-none items-center justify-center bg-gray-200 sm:justify-between ${headerMode} m-0 dark:bg-gray-700 sm:p-8`}
       id={props.id}
     >
       <img

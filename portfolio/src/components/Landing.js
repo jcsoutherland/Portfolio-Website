@@ -10,7 +10,7 @@ import ThreeElement from './ThreeD/ThreeElement'
 const Landing = (props) => {
   return (
     <section
-      className={`section-block relative z-0 cursor-default bg-gray-100 dark:bg-gray-700 ${props.className}`}
+      className={`section-block relative z-0 cursor-default bg-gray-200 dark:bg-gray-700 ${props.className}`}
       id={props.id}
     >
       <div className='absolute top-0 left-0 right-0 z-10 m-auto flex justify-center'>

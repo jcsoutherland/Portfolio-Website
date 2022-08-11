@@ -54,22 +54,30 @@ body {
 #slot-shading {
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(5, 4, 72, 0) 30%,
-    rgba(9, 9, 121, 0) 50%,
-    rgba(3, 143, 209, 0) 80%,
-    rgba(0, 0, 0, 1) 100%
+    rgb(0, 0, 0, 0.98) 0%,
+    rgba(17, 24, 39, 0.98) 5%,
+    rgba(0, 0, 0, 0) 35%,
+    rgba(0, 0, 0, 0) 65%,
+    rgba(17, 24, 39, 0.98) 95%,
+    rgba(0, 0, 0, 0.98) 100%
   );
+}
+
+#landing-title-main {
+  font-size: clamp(7rem, 10vw, 24rem);
+}
+
+#landing-title {
+  font-size: clamp(3rem, 5vw, 10rem);
+}
+
+#landing-subtext {
+  font-size: clamp(2rem, 3vw, 6rem);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-#linkedin:hover:focus {
-  filter: invert(95%) sepia(13%) saturate(53%) hue-rotate(182deg)
-    brightness(99%) contrast(88%);
 }
 
 @layer components {

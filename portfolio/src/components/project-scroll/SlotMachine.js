@@ -74,7 +74,7 @@ const SlotMachine = (props) => {
       >
         <div
           id='slot-shading'
-          className='pointer-events-none absolute top-0 bottom-0 right-0 left-0 z-20 m-auto h-[95%] w-[80%] overflow-hidden rounded-2xl bg-gradient-to-t from-gray-800 via-transparent to-gray-800'
+          className='pointer-events-none absolute top-0 bottom-0 right-0 left-0 z-20 m-auto h-[95%] w-[80%] overflow-hidden rounded-2xl'
         ></div>
         <div className='absolute top-0 bottom-0 right-0 left-0 z-10 m-auto h-[95%] w-[80%] overflow-y-auto rounded-3xl'>
           <div className='absolute top-0 bottom-0 right-0 left-0 z-10 m-auto flex h-[calc(150%)] w-full flex-col'>
@@ -85,12 +85,6 @@ const SlotMachine = (props) => {
           id='slot-roller'
           className='absolute top-0 bottom-0 my-auto h-[15%] w-full bg-gradient-to-t from-black via-gray-600 to-black'
         ></div>
-      </div>
-      <div
-        id='scroll-button-mobile'
-        className='mt-8 mb-2 flex max-h-[10%] w-full items-center justify-center rounded-xl bg-gray-400 text-4xl font-bold tracking-wide text-gray-900 lg:hidden'
-      >
-        PLAY
       </div>
     </div>
   )
